@@ -1,39 +1,42 @@
 package main
 import "fmt"
 
+type Queue struct{
+	front int
+	rear int 
+	size int
+}
+var queue= make([]int, 100)
 
-
-func dequeue()int{
-if front==-1||front>rear{
+func (q *Queue) dequeue()int{
+    if q.front==-1||q.front>q.rear{
 	fmt.Printf("Empty Queue")
     return -1
 }
 
-var element int
-element=queue[front]
-front++
-return element
+    var element int
+
+    element=queue[q.front]
+    q.front++
+    return element
 }
 
-func enqueue(n int){
-if rear==100-1{
-fmt.Printf("size exceed")
+func (q *Queue) enqueue(n int){
+    if q.rear==q.size-1{
+    fmt.Printf("size exceed")
 }
-if front==-1{
-front=0
+    if q.front==-1{
+    q.front=0
 }
-rear++
-queue[rear]=n
+    q.rear++
+    queue[q.rear]=n
 
 }
-
-var front int=-1
-var rear int=-1
-var queue[100]int
 
 func main() {
-enqueue(10)
-enqueue(20)
-fmt.Printf("%d ",dequeue())
-fmt.Printf("%d ",dequeue())
+	q := Queue{-1,-1,100}
+    q.enqueue(10) 
+    q.enqueue(20)
+    fmt.Printf("%d ",q.dequeue())
+    fmt.Printf("%d ",q.dequeue())
 }
