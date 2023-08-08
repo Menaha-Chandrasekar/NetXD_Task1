@@ -7,7 +7,6 @@ type Node struct {
 	value int
 	next  *Node
 }
-
 var head *Node = nil
 
 func CreateNewNode(value int) *Node {
