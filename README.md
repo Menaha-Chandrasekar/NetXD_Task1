@@ -6,3 +6,5 @@ Executing the Task Given
 4. Queue
 5. Double Linked List
 6. Credit Card Validation
+7. Binary Search Tree
+8. Dijikstra Algorithm
